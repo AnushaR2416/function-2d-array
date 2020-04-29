@@ -1,0 +1,79 @@
+/*
+Write a program to reverse the string.
+ 
+Procedure :
+ 
+
+int main()
+Step 1: Declare a character array.
+Step 2: Print a statement as "Enter a string"
+Step 3: Read a string and store it in variable str.
+Step 4: Declare and Initialise 2 variables. (i.e begin=0 and end=strlen(str)-1)
+Step 5: Calling a function reverse(str,begin,end) to reverse the string.
+Step 6: Dispaly the reversed string.
+
+void reverse(char *str, int begin, int end)
+
+Step 1: check begin is >= end. If true end the function.
+
+Step 2: Otherwise swap a character from begin index of str to end index of str by 
+assigning character at begin index of str to a temporary variable
+assigning character at end index of str to begin index of str variable
+assigning a temporary character to end index of str variable
+
+Step 3: Increment begin and decrement end variables.
+
+Step 4: Calling a function reverse(str,begin,end) again.
+
+
+Note –
+String reverse operation reverses the position of each character in a string.
+Example: String – cat; Reverse of String - tac.
+
+ 
+
+Follow the Execution Flow Given below(Text in bold corresponds to input rest corresponds to output )
+
+Execution flow:
+
+Enter the String
+reverse
+
+Reversed String is esrever
+*/
+
+
+
+
+
+
+
+#include<stdio.h>
+void reverse(char *str,int beg,int end)
+{
+    if(end<0)  
+    {
+        
+    }
+    else
+    {
+        printf("%c",str[end]);
+        reverse(str,0,end-1);
+    }
+}
+
+
+int main()
+{
+	char arr[100];
+	int end=0;
+	printf("Enter the String\n");
+	scanf("%s",arr);
+	int beg=0;
+	for(int i=0;arr[i]!='\0';i++)
+	    end=end+1;
+	printf("Reversed String is ");
+	reverse(arr,beg,end-1);
+	
+	return 0;
+}
